@@ -19,6 +19,8 @@
     "url": "http://github.com/riskers/rc-loadmore/issues"
   },
   "scripts": {
+    "start": "npm run dev",
+    "dev": "concurrently -p \"webpack -w\" \"http-server -c-0\"",
     "build": "webpack"
   },
   "peerDependencies": {
@@ -33,6 +35,8 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
+    "concurrently": "^3.5.1",
+    "http-server": "^0.11.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "webpack": "^4.5.0",

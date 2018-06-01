@@ -1,4 +1,5 @@
 var path = require('path');
+var env = process.env.NODE_ENV;
 
 module.exports = {
   mode: 'production',
