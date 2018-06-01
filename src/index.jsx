@@ -66,13 +66,14 @@ LoadMore.defaultProps = {
   threshold: 0, // 阈值
   timer: 100, // 节流函数 timer
   lock: false,  // 锁，为了控制滚动加载而设置
-  cb: function() {},  // callback
   hasMore: false,
+  cb: function() {},  // callback for scroll end
 }
 
 LoadMore.propTypes = {
   threshold: PropTypes.number,
   timer: PropTypes.number,
   lock: PropTypes.bool,
+  hasMore: PropTypes.bool,
   cb: PropTypes.func,
 };
