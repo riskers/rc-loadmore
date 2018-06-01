@@ -2,7 +2,7 @@
 
 a loadmore component for react
 
-![demo](https://stackblitz.com/edit/rc-loadmore)
+[demo](https://stackblitz.com/edit/rc-loadmore)
 
 ## install
 
