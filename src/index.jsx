@@ -46,6 +46,8 @@ class LoadMore extends React.Component {
   render() {
     const {
       hasMore,
+      loadingContent,
+      noMoreContent,
     } = this.props;
 
     return (
@@ -53,9 +55,7 @@ class LoadMore extends React.Component {
         {this.props.children}
 
         {
-          hasMore ? <div>
-            加载中...
-          </div> : <div> 没有更多了 </div>
+          hasMore ? loadingContent : noMoreContent
         }
       </div>
     )
@@ -67,6 +67,8 @@ LoadMore.defaultProps = {
   timer: 100, // 节流函数 timer
   lock: false,  // 锁，为了控制滚动加载而设置
   hasMore: false,
+  loadingContent: <div> loading...</div>,
+  noMoreContent: <div> nomore </div>,
   cb: function() {},  // callback for scroll end
 }
 
@@ -75,5 +77,7 @@ LoadMore.propTypes = {
   timer: PropTypes.number,
   lock: PropTypes.bool,
   hasMore: PropTypes.bool,
+  loadingContent: PropTypes.node,
+  noMoreContent: PropTypes.node,
   cb: PropTypes.func,
 };

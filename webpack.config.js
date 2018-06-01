@@ -6,7 +6,9 @@ module.exports = {
   output: {
     path: path.resolve('lib'),
     filename: 'index.js',
-    libraryTarget: 'commonjs2'
+    library: 'rc-loadmore',
+    libraryTarget: 'umd',
+    libraryExport: 'default'
   },
   resolve: {
     extensions: ['.js', '.jsx']

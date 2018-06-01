@@ -1,6 +1,6 @@
 {
-  "name": "react-loadmore",
-  "version": "0.0.1",
+  "name": "rc-loadmore",
+  "version": "0.0.6",
   "description": "react loadmore component",
   "main": "./lib/index.js",
   "license": "MIT",
@@ -10,6 +10,14 @@
     "loadmore"
   ],
   "author": "riskers",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/riskers/rc-loadmore"
+  },
+  "homepage": "http://github.com/riskers/rc-loadmore",
+  "bugs": {
+    "url": "http://github.com/riskers/rc-loadmore/issues"
+  },
   "scripts": {
     "build": "webpack"
   },

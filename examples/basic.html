@@ -5,18 +5,50 @@
   <title>LoadMore example</title>
   <script src="https://cdn.jsdelivr.net/npm/react@latest/umd/react.development.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/react-dom@16.4.0/umd/react-dom.development.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@6.26.0/babel.min.js"></script>
+  <script src="https://unpkg.com/@material-ui/core/umd/material-ui.development.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/rc-loadmore@latest/lib/index.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@6.26.0/babel.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div id="root"></div>
 
   <script type="text/babel">
-    const App = () => {
-      return (
-        <div>
-          asd
-        </div>
-      )
+    const RcLoadMore = window['rc-loadmore']
+
+    class App extends React.Component {
+      renderContent() {
+        let data = []
+        for (let i = 0; i < 50; i++) {
+          data.push(i)
+        }
+
+        return (
+          <ul>
+            {
+              data.map(d => {
+                return <li key={d}>{d}</li>
+              })
+            }
+          </ul>
+        )
+      }
+
+      render() {
+        return (
+          <div>
+            <RcLoadMore
+              threshold={200}
+              cb={() => {
+                console.log('trigger cb...')
+              }}
+            >
+              <div>
+                {this.renderContent()}
+              </div>
+            </RcLoadMore>
+          </div>
+        )
+      }
     }
     ReactDOM.render(<App />, document.getElementById('root'))
   </script>
