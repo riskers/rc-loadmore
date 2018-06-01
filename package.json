@@ -1,6 +1,6 @@
 {
   "name": "rc-loadmore",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "react loadmore component",
   "main": "./lib/index.js",
   "license": "MIT",
