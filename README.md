@@ -35,4 +35,4 @@ npm install rc-loadmore
 | hasMore | boolean | 是否有更多内容，控制底部显示 |
 | loadingContent | React.Node | hasMore === ture 时显示 |
 | noMoreContent | React.Node | hasMore === false 时显示 |
-| cb | function | 到底时触发的函数 |
+| cb | function | 到底时触发的函数 |
