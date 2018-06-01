@@ -11,8 +11,8 @@ class LoadMore extends React.Component {
   onScroll = () => {
     const {
       threshold,
+      disabled,
       cb,
-      lock,
     } = this.props;
 
     const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;  // 滚动高度
@@ -23,7 +23,7 @@ class LoadMore extends React.Component {
 
     if (
       scrollHeight - threshold <= scrollTop + clientHeight &&
-      !lock
+      !disabled
     ) {
       cb();
     }
@@ -65,7 +65,7 @@ class LoadMore extends React.Component {
 LoadMore.defaultProps = {
   threshold: 0, // 阈值
   timer: 100, // 节流函数 timer
-  lock: false,  // 锁，为了控制滚动加载而设置
+  disabled: false,  // 锁，为了控制滚动加载而设置
   hasMore: false,
   loadingContent: <div> loading...</div>,
   noMoreContent: <div> nomore </div>,
@@ -75,7 +75,7 @@ LoadMore.defaultProps = {
 LoadMore.propTypes = {
   threshold: PropTypes.number,
   timer: PropTypes.number,
-  lock: PropTypes.bool,
+  disabled: PropTypes.bool,
   hasMore: PropTypes.bool,
   loadingContent: PropTypes.node,
   noMoreContent: PropTypes.node,
